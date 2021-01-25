@@ -1,0 +1,29 @@
+<form #myForm="ngForm" (ngSubmit)="save(myForm)" [formGroup]="commentForm">
+    <mat-form-field>
+      <label>
+        <input matInput type="email" placeholder="Email (required)" formControlName="email" />
+      </label>
+      <mat-error>Please provide valid input</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-checkbox formControlName="saveUsername">Remember email</mat-checkbox>
+    <br>
+    <mat-form-field>
+      <label>
+        <input matInput type="text" placeholder="Message header (required)" formControlName="messageHeader" />
+      </label>
+      <mat-error>Please provide valid input</mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+      <label>
+        <textarea matInput rows="5" type="text" placeholder="Message text (required)" formControlName="messageBody"></textarea>
+      </label>
+      <mat-error>
+        <span *ngIf="commentForm.controls['messageBody'].hasError('required')">Field is required</span>
+        <span *ngIf="commentForm.controls['messageBody'].hasError('minlength')">Should have at least 20 symbols</span>
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" type="submit">Comment</button>
+</form>
