@@ -8,7 +8,7 @@ import { UserComment } from './comment';
     providedIn: 'root'
 })
 export class CommentService {
-    private commentUrl = 'http://jsonplaceholder.typicode.com/comments';
+    private commentUrl = 'https://jsonplaceholder.typicode.com/comments';
 
     constructor(private http: HttpClient) { }
 
