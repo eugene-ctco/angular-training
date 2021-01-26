@@ -8,7 +8,7 @@ import { Post } from './post';
     providedIn: 'root'
 })
 export class PostService {
-    private postUrl = 'http://jsonplaceholder.typicode.com/posts';
+    private postUrl = 'https://jsonplaceholder.typicode.com/posts';
 
     constructor(private http: HttpClient) { }
 
