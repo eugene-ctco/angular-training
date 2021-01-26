@@ -1,9 +1,0 @@
-<mat-list class="comment-list">
-    <mat-list-item *ngFor='let comment of comments'>
-        <h4 matLine>{{comment.email}}:</h4>
-        <p matLine><b>{{comment.name}}</b></p>
-        <p matLine>{{comment.body}}</p>
-    </mat-list-item>
-</mat-list>
-
-<app-add-comment [postId]=postId (onCommentAdded)="updateCommentList($event)"></app-add-comment>
